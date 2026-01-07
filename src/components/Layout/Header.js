@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 1 }}>
       <Box
         component="img"
         src={Logo}
@@ -33,7 +33,13 @@ const Navbar = () => {
         }}
       />
 
-      <Box sx={{ my: 2 }}>
+      <Box sx={{ 
+        my: 2,
+        display: "flex",
+        flexDirection: "column",
+        gap: 1,
+        
+        }}>
         <Button component={NavLink} to="/" color="inherit">
           Home
         </Button>
@@ -61,7 +67,7 @@ const Navbar = () => {
     src={Logo}
     alt="logo"
     sx={{
-      height: 95,
+      height: 70,
       width: "auto",
       objectFit: "contain",
       display: "block",
@@ -76,8 +82,10 @@ const Navbar = () => {
       letterSpacing: "1px",
     }}
   >
-    Akash Men’s Wear
+
+   Akash Men’s Wear
   </Typography>
+
 </Box>
 
           {/* MOBILE MENU BUTTON */}

@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, TextField, Button, Paper } from "@mui/material";
 
 export default function Contact() {
+  // 1️⃣ Add state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // 2️⃣ Input handle karne ke liye
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // 3️⃣ Form submit handle
+  const handleSubmit = (e) => {
+    e.preventDefault(); // page reload nahi hoga
+    console.log("Form submitted:", formData);
+    alert("Thank you! We received your message.");
+    setFormData({ name: "", email: "", message: "" }); // form reset
+  };
+
   return (
     <Box
       sx={{
@@ -29,47 +49,54 @@ export default function Contact() {
         </Button>
       </Box>
 
-      {/* Form */}
+      {/* 4️⃣ Add form */}
       <Paper
         elevation={3}
-        sx={{
-          padding: "20px",
-          maxWidth: "400px",
-          width: "100%",
-          marginBottom: "30px",
-        }}
+        sx={{ padding: "20px", maxWidth: "400px", width: "100%", marginBottom: "30px" }}
       >
-        <Typography variant="h6" gutterBottom>
-          Send Us a Message
-        </Typography>
-        <TextField
-          label="Name"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Email"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Message"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          multiline
-          rows={4}
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          fullWidth
-          sx={{ marginTop: "10px" }}
-        >
-          Send Message
-        </Button>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Name"
+            name="name"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Email"
+            name="email"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Message"
+            name="message"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            multiline
+            rows={4}
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: "10px" }}
+          >
+            Send Message
+          </Button>
+        </form>
       </Paper>
 
       {/* Shop Details */}

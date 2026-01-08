@@ -19,39 +19,57 @@ const Navbar = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  /* ================= MOBILE DRAWER ================= */
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 1 }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        py: 3,
+      }}
+    >
       <Box
         component="img"
         src={Logo}
         alt="logo"
         sx={{
-          height: 110,
-          width: "auto",
-          objectFit: "contain",
+          height: 90,
           mx: "auto",
+          mb: 2,
         }}
       />
 
-      <Box sx={{ 
-        my: 2,
-        display: "flex",
-        flexDirection: "column",
-        gap: 1,
-        
-        }}>
-        <Button component={NavLink} to="/" color="inherit">
-          Home
-        </Button>
-        <Button component={NavLink} to="/menu" color="inherit">
-          Menu
-        </Button>
-        <Button component={NavLink} to="/about" color="inherit">
-          About
-        </Button>
-        <Button component={NavLink} to="/contact" color="inherit">
-          Contact
-        </Button>
+      <Typography
+        sx={{
+          fontWeight: 700,
+          fontSize: "1.2rem",
+          mb: 2,
+          color: "black",
+        }}
+      >
+        Akash Men’s Wear
+      </Typography>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 1.5,
+        }}
+      >
+        {["Home", "Menu", "About", "Contact"].map((item) => (
+          <Button
+            key={item}
+            component={NavLink}
+            to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+            sx={{
+              color: "black",
+              fontWeight: 600,
+            }}
+          >
+            {item}
+          </Button>
+        ))}
       </Box>
     </Box>
   );
@@ -59,36 +77,38 @@ const Navbar = () => {
   return (
     <>
       <AppBar component="nav" sx={{ bgcolor: "black" }}>
-        <Toolbar sx={{ py: 1.2 }}>
-          {/* LEFT LOGO */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-  <Box
-    component="img"
-    src={Logo}
-    alt="logo"
-    sx={{
-      height: 70,
-      width: "auto",
-      objectFit: "contain",
-      display: "block",
-    }}
-  />
+        <Toolbar sx={{ py: 1.3 }}>
+          {/* ================= LOGO + BRAND ================= */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,           // 🔥 space control
+            }}
+          >
+            <Box
+              component="img"
+              src={Logo}
+              alt="logo"
+              sx={{
+                height: { xs: 45, sm: 55 }, // mobile / desktop
+              }}
+            />
 
-  <Typography
-    variant="h5"
-    sx={{
-      fontWeight: "bold",
-      color: "goldenrod",
-      letterSpacing: "1px",
-    }}
-  >
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: "1.1rem", sm: "1.4rem" },
+                letterSpacing: "1.2px",
+                color: "goldenrod",
+                textTransform: "uppercase",
+              }}
+            >
+              Akash Men’s Wear
+            </Typography>
+          </Box>
 
-   Akash Men’s Wear
-  </Typography>
-
-</Box>
-
-          {/* MOBILE MENU BUTTON */}
+          {/* ================= MOBILE MENU ICON ================= */}
           <IconButton
             color="inherit"
             edge="end"
@@ -98,25 +118,29 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
 
-          {/* DESKTOP LINKS */}
-          <Box sx={{ ml: "auto", display: { xs: "none", sm: "block" } }}>
-            <Button component={NavLink} to="/" sx={{ color: "white" }}>
-              Home
-            </Button>
-            <Button component={NavLink} to="/menu" sx={{ color: "white" }}>
-              Menu
-            </Button>
-            <Button component={NavLink} to="/about" sx={{ color: "white" }}>
-              About
-            </Button>
-            <Button component={NavLink} to="/contact" sx={{ color: "white" }}>
-              Contact
-            </Button>
+          {/* ================= DESKTOP MENU ================= */}
+          <Box sx={{ ml: "auto", display: { xs: "none", sm: "flex" }, gap: 1 }}>
+            {["Home", "Menu", "About", "Contact"].map((item) => (
+              <Button
+                key={item}
+                component={NavLink}
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                sx={{
+                  color: "white",
+                  fontWeight: 600,
+                  "&.active": {
+                    color: "goldenrod",
+                  },
+                }}
+              >
+                {item}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* DRAWER */}
+      {/* ================= DRAWER ================= */}
       <Drawer
         anchor="right"
         open={mobileOpen}

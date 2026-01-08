@@ -1,97 +1,84 @@
-import React from 'react'
-import Layout from '../components/Layout/Layout'
-import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Container } from '@mui/material'
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import EmailIcon from '@mui/icons-material/Email';
-import CallIcon from '@mui/icons-material/Call';
+import React from "react";
+import { Box, Typography, TextField, Button, Paper } from "@mui/material";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <Layout>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "40px 20px",
+        backgroundColor: "#f5f5f5",
+      }}
+    >
+      <Typography variant="h4" gutterBottom>
+        Contact My Website
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        We would love to hear from you! Reach us on WhatsApp or call.
+      </Typography>
 
-      <Box sx={{ background: "#f4f4f4", py: 6 }}>
-        <Container maxWidth="md">
-
-          {/* HEADING SECTION */}
-          <Box sx={{ textAlign: "center", mb: 4 }}>
-            <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-              Contact My Website
-            </Typography>
-
-            <Box sx={{
-              width: "80px",
-              height: "4px",
-              backgroundColor: "#d4af37",
-              borderRadius: "5px",
-              mx: "auto",
-              mt: 1,
-              mb: 3
-            }}/>
-
-            <Typography sx={{ fontSize: "18px", color: "#444", lineHeight: 1.8 }}>
-              We would love to hear from you! Whether you have a question, need a custom order,
-              or want to discuss your style ideas, feel free to reach out. Our team is always
-              ready to assist you and ensure your experience with us is seamless and satisfying.
-            </Typography>
-          </Box>
-
-          {/* CONTACT CARD */}
-          <TableContainer 
-            component={Paper} 
-            sx={{ 
-              borderRadius: "14px",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.15)"
-            }}
-          >
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell 
-                    align="center" 
-                    sx={{ 
-                      bgcolor: "black", 
-                      color: "white",
-                      fontSize: "18px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    Contact Details
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-
-              <TableBody>
-
-                <TableRow>
-                  <TableCell sx={{ fontSize: "17px" }}>
-                    <SupportAgentIcon sx={{ color: "red", mr: 1 }}/> 
-                    1800-256-256 (Toll-Free)
-                  </TableCell>
-                </TableRow>
-
-                <TableRow>
-                  <TableCell sx={{ fontSize: "17px" }}>
-                    <EmailIcon sx={{ color: "skyblue", mr: 1 }}/> 
-                    KodamTech@gmail.com
-                  </TableCell>
-                </TableRow>
-
-                <TableRow>
-                  <TableCell sx={{ fontSize: "17px" }}>
-                    <CallIcon sx={{ color: "green", mr: 1 }}/> 
-                    9833812843
-                  </TableCell>
-                </TableRow>
-
-              </TableBody>
-            </Table>
-          </TableContainer>
-
-        </Container>
+      {/* Buttons */}
+      <Box sx={{ display: "flex", gap: 2, marginBottom: 4 }}>
+        <Button variant="outlined" color="primary">
+          WhatsApp
+        </Button>
+        <Button variant="outlined" color="primary">
+          Call Us
+        </Button>
       </Box>
 
-    </Layout>
-  )
-}
+      {/* Form */}
+      <Paper
+        elevation={3}
+        sx={{
+          padding: "20px",
+          maxWidth: "400px",
+          width: "100%",
+          marginBottom: "30px",
+        }}
+      >
+        <Typography variant="h6" gutterBottom>
+          Send Us a Message
+        </Typography>
+        <TextField
+          label="Name"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Email"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Message"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          multiline
+          rows={4}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ marginTop: "10px" }}
+        >
+          Send Message
+        </Button>
+      </Paper>
 
-export default Contact
+      {/* Shop Details */}
+      <Box sx={{ textAlign: "center" }}>
+        <Typography variant="h6">Akash Men’s Wear</Typography>
+        <Typography>Shop Address: Mumbai, Maharashtra</Typography>
+        <Typography>Toll-Free Number: 1800-XXX-XXXX</Typography>
+        <Typography>WhatsApp / Call Us for Enquiries</Typography>
+      </Box>
+    </Box>
+  );
+}

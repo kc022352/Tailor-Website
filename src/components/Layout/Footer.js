@@ -20,7 +20,7 @@ const Footer = () => {
         {/* ICONS */}
         <Box 
           sx={{ 
-            my:2,
+            my:1,
             display:"flex",
             alignItems:"center",
             justifyContent:"center",
@@ -41,10 +41,10 @@ const Footer = () => {
             }
           }}
         >
-          <InstagramIcon sx={{ fontSize:50 }} />
-          <TwitterIcon sx={{ fontSize:50 }} />
-          <GitHubIcon sx={{ fontSize:50 }} />
-          <YouTubeIcon sx={{ fontSize:50 }} />
+          <InstagramIcon sx={{ fontSize:30 }} />
+          <TwitterIcon sx={{ fontSize:30 }} />
+          <GitHubIcon sx={{ fontSize:30 }} />
+          <YouTubeIcon sx={{ fontSize:30 }} />
         </Box>
 
         {/* TEXT */}
@@ -56,7 +56,7 @@ const Footer = () => {
             }
           }}
         >
-          All Rights Reseverd © Men's Wear YT
+          All Rights Reseverd © Men's Wear
         </Typography>
 
       </Box>

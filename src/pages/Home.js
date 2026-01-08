@@ -1,33 +1,18 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout';
 import Banner from "../images/images1.png";
 import "../styles/HomeStyles.css";
 
 const Home = () => {
   return (
-    <Layout>
-      <div
-        className="home"
-        style={{ backgroundImage: `url(${Banner})` }}
-      >
-        <div className="headerContainer">
-          <h1>Tailor Website</h1>
-          <p>Best Tailor In India</p>
-
-          {/* WhatsApp Contact Button */}
-          <a
-            href="https://wa.me/917738195355?text=Hello%20I%20want%20tailoring%20service"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button>
-              Contact Us
-            </button>
-          </a>
-
-        </div>
+    <div className="home" style={{ backgroundImage: `url(${Banner})` }}>
+      <div className="headerContainer">
+        <h1>Tailor Website</h1>
+        <p>Best Tailor In India</p>
+        <a href="https://wa.me/917738195355?text=Hello%20I%20want%20tailoring%20service" target="_blank" rel="noopener noreferrer">
+          <button>Contact Us</button>
+        </a>
       </div>
-    </Layout>
+    </div>
   );
 };
 

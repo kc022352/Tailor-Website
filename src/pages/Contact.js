@@ -23,31 +23,61 @@ export default function Contact() {
   };
 
   return (
+
+
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "40px 20px",
+        padding: "20px 20px",
         backgroundColor: "#f5f5f5",
       }}
     >
+
+         <Paper
+        elevation={3}
+        sx={{ padding: "20px", maxWidth: "400px", width: "100%", marginBottom: "30px" }}
+      >
       <Typography variant="h4" gutterBottom>
         Contact My Website
       </Typography>
       <Typography variant="body1" gutterBottom>
-        We would love to hear from you! Reach us on WhatsApp or call.
+        We would love to hear from you!<br />
+        Reach us on WhatsApp or call.
       </Typography>
 
       {/* Buttons */}
       <Box sx={{ display: "flex", gap: 2, marginBottom: 4 }}>
-        <Button variant="outlined" color="primary">
+        {/* <Button variant="outlined" color="primary">
           WhatsApp
-        </Button>
-        <Button variant="outlined" color="primary">
+        </Button> */}
+
+          <a
+          href="https://wa.me/917738195355?text=Hello%20Sir"
+          target="_blank"
+          rel="noopener noreferrer"  
+        >
+          <Button variant="outlined" color="success">WhatsApp</Button>
+        </a>
+
+
+        {/* <Button variant="outlined" color="primary">
           Call Us
-        </Button>
+        </Button> */}
+
+         <a
+          href="tel:+917738195355"
+          target="_blank"
+          rel="noopener noreferrer"  
+        >
+          <Button variant="outlined" color="warning">Call Us</Button>
+        </a>
+
       </Box>
+
+      </Paper>
+
 
       {/* 4️⃣ Add form */}
       <Paper
@@ -103,8 +133,8 @@ export default function Contact() {
       <Box sx={{ textAlign: "center" }}>
         <Typography variant="h6">Akash Men’s Wear</Typography>
         <Typography>Shop Address: Mumbai, Maharashtra</Typography>
-        <Typography>Toll-Free Number: 1800-XXX-XXXX</Typography>
-        <Typography>WhatsApp / Call Us for Enquiries</Typography>
+        <Typography>Contact Number: +91 773-819-5355</Typography>
+        
       </Box>
     </Box>
   );

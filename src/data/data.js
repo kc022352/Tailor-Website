@@ -48,37 +48,37 @@ export const MenuList = [
     name: 'Coat',
     description: 'Elegant and perfectly measured coats stitched to give you a sharp and professional appearance',
     images: [Coat, Coat1, Coat2, Coat3],
-    price: 600,
+    
   },
   {
     name: 'Indo-Western',
     description: 'Premium Indo-Western outfits combining modern fashion with traditional elegance',
     images: [Indo, Indo1, Indo2, Indo3],
-    price: 800,
+    
   },
   {
     name: 'Jacket',
     description: 'Trendy and comfortable jackets crafted with expert tailoring',
     images: [Jacket, Jacket1, Jacket2, Jacket3],
-    price: 400,
+    
   },
   {
     name: 'Kurta Pajama',
     description: 'Traditional kurta pajama tailored with fine finishing',
     images: [Kurta, Kurta1, Kurta2, Kurta3],
-    price: 500,
+    
   },
   {
     name: 'Modi Jacket',
     description: 'Classic Modi jackets stitched with precision',
     images: [Modi, Modi1, Modi2, Modi3],
-    price: 700,
+   
   },
   {
     name: 'Patani Suit',
     description: 'Beautifully designed Patani suits',
     images: [Patani, Patani1, Patani2, Patani3],
-    price: 400,
+    
   },
   {
     name: 'Paint',
@@ -90,12 +90,12 @@ export const MenuList = [
     name: 'Pathani Suit',
     description: 'Traditional Pathani suit',
     images: [Sale, Sale1, Sale2, Sale3],      // ✅ array
-    price: 800,
+    
   },
   {
     name: 'Short Jacket',
     description: 'Stylish short jacket',
     images: [Lower, Lower1, Lower2, Lower3],     // ✅ key fixed
-    price: 800,
+    
   },
 ];

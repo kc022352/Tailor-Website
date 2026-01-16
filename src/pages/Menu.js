@@ -184,9 +184,9 @@ const ImageSliderCard = ({ menu }) => {
             <Typography sx={{ mt: 1 }}>
               {menu.description}
             </Typography>
-            <Typography sx={{ mt: 2, fontWeight: "bold", color: "goldenrod" }}>
+            {/*{<Typography sx={{ mt: 2, fontWeight: "bold", color: "goldenrod" }}>
               Price: ₹{menu.price}
-            </Typography>
+            </Typography>}*/}
           </Box>
         </Box>
       </Dialog>

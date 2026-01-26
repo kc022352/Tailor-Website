@@ -81,7 +81,7 @@ export const MenuList = [
     
   },
   {
-    name: 'Paint',
+    name: 'Pant',
     description: 'Custom-stitched short pants',
     images: [Paint, Paint1, Paint2, Paint3],
     price: 800,

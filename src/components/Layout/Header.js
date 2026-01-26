@@ -154,7 +154,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <Drawer
-        anchor="right"
+        anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         sx={{ display: { xs: "block", sm: "none"}   }}
